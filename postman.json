@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "ca209bce-3217-46d6-ae7a-e7aaaf7b85f4",
+		"name": "Laravel Ace",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@laravel.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{base_url}}/user",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{base_url}}/logout",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Customers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{base_url}}/customers",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"customers"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "first_name",
+							"value": "Craig",
+							"disabled": true
+						},
+						{
+							"key": "last_name",
+							"value": "Diaz",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single Customer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{base_url}}/customer/803",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"customer",
+						"803"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://laravel.test/api",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjUwMGNiNzVmNmMwYzI1NThhMDVjYmMyMjcxZTNlNWE5YmQ3ZTBkMDY5YmFiMjA2NTUxZTU1OGI4NWQxY2IwM2RlNjViZTlmZDdjZWQwZWMiLCJpYXQiOjE2NTI5NjQ2ODIsIm5iZiI6MTY1Mjk2NDY4MiwiZXhwIjoxNjg0NTAwNjgyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ARNyPjKhwiMON4asr6bcQqd_XyC9WaKMUwq_4tbqQZXfB2_VSjmfdSTMuN_QxVT1yUYaNOfkRYIz-R-GUY79f2nRuaappYapIyRFtcoxPJBy27ElGdOlhOm2U-DoDdBI3AM-igKS-1WIkV40gBP8eqAY6Li6N_xC-YYKcS84b2JXzsTJX0h8B-xvoDwdxIUr4u2mXOhSARtxonzLjOkBBwNN2ScZHDPFBdB-TABWzjURRHccHBU1mQn2oeDkKQSMfU841mMaO5XbWajjgR5J_6EX_hcafFUYNXaSg7dVX-UhvZhgmjpxk4hsnohn3DfiCr5_7xYRZjwqH2wTTgHeoNMDUL6zfUBwybQJ8FlDkBjiFTcCqa4owu8wTjb0HrPpW5v-_ApCCj5Rlx_7BC1Cxm9X-pVwhBMVIK8qn2VzdWA_dWGXPDNqYV7431q77Ea_2OMGmzO2bEZDZG7LEhQulT0Xq3kSzsCpfoTZba21NUCbPlWLxcxiovGOJdOL1iAjrnte0wA4yJPSeP7ALFnjTHSW2jIkCnalvysxlSP7b5cGmvZmnG5gLYb2IrR7gwom1M0D076h05QwS8T_CMYrrv00V008SFaSSicyZUZ2kpinDdGjC-d-XAwpnkdhZPL9vWCvbt9gEyEngtnr5yUnfk7wbJFQvJKQCOz1bChq5pw"
+		}
+	]
+}
